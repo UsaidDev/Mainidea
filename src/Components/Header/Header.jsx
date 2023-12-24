@@ -33,7 +33,7 @@ function Header() {
           <li><a href="/#">Login</a></li>
         </ul>
         <ul>
-          <li><a href="/#">MainIdea</a></li>
+          <li className='heading'><a href="/#">MainIdea</a></li>
           <li className='hideOnMobile'><a href="/#">Share</a></li>
           <li className='hideOnMobile'><a href="/#">Discover</a></li>
           <li className='hideOnMobile'><a href="/#">Connect</a></li>
