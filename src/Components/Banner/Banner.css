@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Knewave&family=Poppins:ital,wght@0,500;1,500&display=swap');
 
-.content{
+.content {
     width: 100%;
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
     text-align: center;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
-.content h2{
+
+.content h2 {
     font-size: 34px;
 }
-.content p{
+
+.content p {
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
 }
-.getstarted{
+
+.getstarted {
     width: 150px;
-    padding:15px 0 ;
+    padding: 15px 0;
     text-align: center;
 
     border-radius: 25px;
@@ -30,10 +33,11 @@
     overflow: hidden;
     color: #333;
 }
-span{
+
+span {
     background-color: red;
     height: 100%;
-    width:0;
+    width: 0;
     border-radius: 25px;
     position: absolute;
     left: 0;
@@ -41,10 +45,94 @@ span{
     z-index: -1;
     transition: 0.5s;
 }
-.getstarted:hover span{
+
+.getstarted:hover span {
     width: 100%;
 }
-.getstarted:hover{
-   border: none;
-   color: white;
+
+.getstarted:hover {
+    border: none;
+    color: white;
+}
+
+.banner {
+    height: 400px;
+    width: auto;
+}
+
+.feature {
+    height: 400px;
+    width: auto;
+    background-color: gray;
+}
+
+@media(max-width:400px) {
+    .banner {
+        height: 500px;
+        width: auto;
+    }
+}
+
+@media(max-width:800px) {
+    .banner {
+        height: 500px;
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .banner {
+        height: 580px;
+        width: auto;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .banner {
+        height: 400px;
+        width: auto;
+    }
+}
+
+
+
+
+/*-----Feature------*/
+.feature-para p{
+    font-size: 20px;
+}
+.feature-box{
+    height: 100px;
+    width: auto;
+    background-color: rgba(43, 21, 66, 0.267);
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.feature-box h4{
+    margin: auto;
+    text-align: start;
+    justify-content: start;
+    font-size: 20px;
+}
+
+
+@media(max-width:600px){
+    .feature{
+        height: 600px;
+        width: auto;
+        background-color:rgba(53, 26, 82, 0.267);
+    }
+}
+@media only screen and (min-width: 768px) {
+    .feature{
+        height: 350px;
+        width: auto;
+        background-color:rgba(53, 26, 82, 0.267);
+    }
+}
+@media only screen and (min-width: 992px) {
+    .feature{
+        height: 400px;
+        width: auto;
+        background-color:rgba(0, 0, 0, 0.267);
+    }
 }
