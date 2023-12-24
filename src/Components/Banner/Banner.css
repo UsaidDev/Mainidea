@@ -136,3 +136,52 @@ span {
         background-color:rgba(0, 0, 0, 0.267);
     }
 }
+/*-----End Feature------*/
+
+@media(max-width:600px){
+    .welcome{
+        height: 600px;
+        width: auto;
+        background-color: #fff;
+    }
+    .welcome-heading{
+        font-size: 23px;
+    }
+    .parabox{
+        height: 170px;
+        width: auto;
+        border: 2px dotted;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .welcome{
+        height: 350px;
+        width: auto;
+        background-color: #fff;
+    }
+    .welcome-heading{
+
+    }
+    .parabox{
+        height: 130px;
+        width: auto;
+        border: 2px dotted;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .welcome{
+        height: 400px;
+        width: auto;
+        background-color: #fff;
+    }
+    .welcome-heading{
+
+    }
+    .parabox{
+        height: 100px;
+        width: auto;
+        border: 2px dotted;
+        font-size: 16px;
+        font-family: "Poppins",sans-serif;
+    }
+}
