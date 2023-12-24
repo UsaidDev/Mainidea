@@ -15,7 +15,7 @@ function Banner() {
       <div className="feature">
         <div className="container">
           <div className="row d-flex justify-content-center">
-            <h2 className='mt-4'>Feature</h2>
+            <h2 className='mt-4'>Feature's</h2>
           </div>
           <div className="feature-para">
             <p className='d-flex justify-content-center'>Analytics insights</p>
@@ -51,7 +51,6 @@ function Banner() {
       <div className="welcome">
         <div className="container">
           <div className="row d-flex justify-content-center">
-            <h3 className='mt-3 welcome-heading'>Welcome to our Mainidea Platform</h3>
             <div className="parabox">
             <p className='text-center'>Our platform is designed to provide a space for you to share your ideas, thoughts, and opinions with others. Whether you have a unique perspective on a particular topic or want to engage in meaningful discussions, our platform offers a supportive community where you can connect with like-minded individuals.</p>
             </div>
