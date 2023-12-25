@@ -86,6 +86,7 @@ span {
         width: auto;
     }
 }
+
 @media only screen and (min-width: 992px) {
     .banner {
         height: 400px;
@@ -97,17 +98,19 @@ span {
 
 
 /*-----Feature------*/
-.feature-para p{
+.feature-para p {
     font-size: 20px;
 }
-.feature-box{
+
+.feature-box {
     height: 100px;
     width: auto;
     background-color: rgba(43, 21, 66, 0.267);
     border-radius: 15px;
     margin-top: 10px;
 }
-.feature-box h4{
+
+.feature-box h4 {
     margin: auto;
     text-align: start;
     justify-content: start;
@@ -115,77 +118,31 @@ span {
 }
 
 
-@media(max-width:600px){
-    .feature{
+@media(max-width:600px) {
+    .feature {
         height: 600px;
         width: auto;
-        background-color:rgba(53, 26, 82, 0.267);
+        background-color: rgba(53, 26, 82, 0.267);
     }
 }
+
 @media only screen and (min-width: 768px) {
-    .feature{
+    .feature {
         height: 350px;
         width: auto;
-        background-color:rgba(53, 26, 82, 0.267);
+        background-color: rgba(53, 26, 82, 0.267);
     }
 }
+
 @media only screen and (min-width: 992px) {
-    .feature{
+    .feature {
         height: 400px;
         width: auto;
-        background-color:rgba(0, 0, 0, 0.267);
+        background-color: rgba(0, 0, 0, 0.267);
     }
 }
+
 /*-----End Feature------*/
 
-@media(max-width:600px){
-    .welcome{
-        height:200px;
-        width: auto;
-        background-color:rgba(0, 0, 0, 0.267);
-        color: white;
-    }
-    .welcome-heading{
-        font-size: 23px;
-    }
-    .parabox{
-        height: 170px;
-        width: auto;
-        border: 2px dotted #333;
-    }
-}
-@media only screen and (min-width: 768px) {
-    .welcome{
-        height: 200px;
-        width: auto;
-        background-color:rgba(0, 0, 0, 0.267);
-        color: white;
-    }
-    .welcome-heading{
-        color: white;
-    }
-    .parabox{
-        height: 130px;
-        width: auto;
-        border: 2px dotted #333;
-        color: white;
-    }
-}
-@media only screen and (min-width: 992px) {
-    .welcome{
-        height: 150px;
-        width: auto;
-        background-color:rgba(0, 0, 0, 0.267);
-        color: white;
-    }
-    .welcome-heading{
-        color: white;
-    }
-    .parabox{
-        width: auto;
-        border: 2px dotted #333;
-        font-size: 16px;
-        font-family: "Poppins",sans-serif;
-        color: #fff;
-    }
-}
+
+

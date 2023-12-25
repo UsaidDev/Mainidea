@@ -3,6 +3,7 @@ import './Banner.css'
 function Banner() {
   return (
     <>
+      {/*-----BANNER-----*/}
       <div className='banner'>
         <div className="content">
           <h2>Share Your Ideas and Thoughts 💯!!</h2>
@@ -12,6 +13,8 @@ function Banner() {
           </div>
         </div>
       </div>
+      {/*-----END BANNER-----*/}
+      {/*-----FEATURE-----*/}
       <div className="feature">
         <div className="container">
           <div className="row d-flex justify-content-center">
@@ -48,15 +51,8 @@ function Banner() {
           </div>
         </div>
       </div>
-      <div className="welcome">
-        <div className="container">
-          <div className="row d-flex justify-content-center">
-            <div className="parabox">
-            <p className='text-center'>Our platform is designed to provide a space for you to share your ideas, thoughts, and opinions with others. Whether you have a unique perspective on a particular topic or want to engage in meaningful discussions, our platform offers a supportive community where you can connect with like-minded individuals.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/*-----END FEATURE-----*/}
+
     </>
 
   )
