@@ -25,10 +25,10 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <div class="text-center p-4 copyright"> 
-            <h6 class="text-reset fw-bold" href="/#">© 2023 Mainidea.AllRights Reserved.</h6>
-          </div>
+      <div class="text-center p-4 copyright">
+        <h6 class="text-reset fw-bold" href="/#">© 2023 Mainidea.AllRights Reserved.</h6>
+      </div>
     </div>
   )
 }
-export default Footer
+export default Footer;
