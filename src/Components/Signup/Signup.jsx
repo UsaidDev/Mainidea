@@ -3,14 +3,26 @@ import './Signup.css'
 import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { FirebaseContext } from '../../store/FirebaseContext'
-
+import { useNavigate } from 'react-router-dom'
 function Signup() {
     const [username, Setusername] = useState('');
     const [email, Setemail] = useState('');
     const [password, Setpassword] = useState('');
     const { firebase } = useContext(FirebaseContext)
+    const navigate = useNavigate()
     const handleSubmit = (e) => {
-        console.log(firebase)
+        firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
+            result.user.updateProfile({ displayName: username }).then(() => {
+                firebase.firestore().collection('users').add({
+                    id:result.user.uid,
+                    username:username,
+                    email:email
+                }).then(()=>{
+                    alert("Account Created Successfully")
+                    navigate('/login')
+                })
+            })
+        })
     }
     return (
         <div>
