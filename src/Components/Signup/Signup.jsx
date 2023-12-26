@@ -1,26 +1,36 @@
 import React from 'react'
 import './Signup.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { FirebaseContext } from '../../store/FirebaseContext'
+
 function Signup() {
-  return (
-    <div>
-        <div className="wrapper">
-            <h1>Sign Up</h1>
-            <form action="/">
-                <input type="text" placeholder='Username' />
-                <input type="email" placeholder='Email' />
-                <input type="password" placeholder='Password' />
-                <input type="text" placeholder='Re-Enter password' />
-            </form>
-            <button>Signup</button>
-            <div className="member">
-                Already a member? <Link to={'/login'} >
-                    login here
-                </Link>
+    const [username, Setusername] = useState('');
+    const [email, Setemail] = useState('');
+    const [password, Setpassword] = useState('');
+    const { firebase } = useContext(FirebaseContext)
+    const handleSubmit = (e) => {
+        console.log(firebase)
+    }
+    return (
+        <div>
+            <div className="wrapper">
+                <h1>Sign Up</h1>
+                <form>
+                    <input type="text" value={username} placeholder='Username' onChange={((e) => Setusername(e.target.value))} />
+                    <input type="email" value={email} placeholder='Email' onChange={((e) => Setemail(e.target.value))} />
+                    <input type="password" value={password} placeholder='Password' onChange={((e) => Setpassword(e.target.value))} />
+                    <input type="text" placeholder='Re-Enter password' />
+                </form>
+                <button onClick={handleSubmit}>Signup</button>
+                <div className="member">
+                    Already a member? <Link to={'/login'} >
+                        login here
+                    </Link>
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Signup
