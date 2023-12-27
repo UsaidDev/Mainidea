@@ -1,7 +1,10 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
+
+import { AuthContext } from '../../store/FirebaseContext';
 function Header() {
+  const {user}=useContext(AuthContext)
   const showSidebar = () => {
     const sidebar = document.querySelector('.sidebar');
     if (sidebar) {
@@ -41,6 +44,7 @@ function Header() {
           <li className='hideOnMobile'><a href="/#">Share</a></li>
           <li className='hideOnMobile'><a href="/#">Discover</a></li>
           <li className='hideOnMobile'><a href="/#">Connect</a></li>
+          <li className='hideOnMobile'>{user? user.displayName:'Login'}</li>
           <li className='hideOnMobile'>
             <Link to={'/login'}>
               login

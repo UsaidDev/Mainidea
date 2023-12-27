@@ -1,39 +1,41 @@
-import React from 'react'
-import './Login.css'
-import { useState, useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { FirebaseContext } from '../../store/FirebaseContext'
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FirebaseContext } from '../../store/FirebaseContext';
+import './Login.css';
+
 function Login() {
-  const [email, Setemail] = useState('')
-  const [password, Setpassword] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const { firebase } = useContext(FirebaseContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
-    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      alert("Login Successfull")
-      navigate('/')
-    }).catch((error) => {
-      alert(error)
-    })
-  }
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(() => {
+        alert("Login Successful");
+        navigate('/');
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+
   return (
     <div>
-      <div className="wrapper">
-        <h1>Login</h1>
-        <form>
-          <input type="email" placeholder='Email' value={email} onChange={((e) => Setemail(e.target.value))} />
-          <input type="text" placeholder='Password' value={password} onChange={((e) => Setpassword(e.target.value))} />
-        </form>
-        <button onClick={handleSubmit}>Login</button>
-        <div className="member">
-          Not a member? <Link to={'/signup'}>
-            Registor Now
-          </Link>
+        <div className="wrapper">
+          <h1>Login</h1>
+          <form>
+            <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          </form>
+          <button onClick={handleSubmit}>Login</button>
+          <div className="member">
+            Not a member? <Link to={'/signup'}>Register Now</Link>
+          </div>
         </div>
-      </div>
     </div>
-  )
-};
+  );
+}
 
-export default Login
+export default Login;
