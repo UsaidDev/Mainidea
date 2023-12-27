@@ -26,6 +26,8 @@ nav ul {
 
 nav li {
     height: 50px;
+    display: flex;
+    
 }
 
 nav a {

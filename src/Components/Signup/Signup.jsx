@@ -14,10 +14,10 @@ function Signup() {
         firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
             result.user.updateProfile({ displayName: username }).then(() => {
                 firebase.firestore().collection('users').add({
-                    id:result.user.uid,
-                    username:username,
-                    email:email
-                }).then(()=>{
+                    id: result.user.uid,
+                    username: username,
+                    email: email
+                }).then(() => {
                     alert("Account Created Successfully")
                     navigate('/login')
                 })

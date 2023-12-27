@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../store/FirebaseContext';
+
 function Header() {
+  const navigate = useNavigate()
+  const { user } = useContext(AuthContext)
   const showSidebar = () => {
     const sidebar = document.querySelector('.sidebar');
     if (sidebar) {
@@ -15,6 +19,13 @@ function Header() {
       sidebar.style.display = 'none';
     }
   };
+  const UserCheck = () => {//User Login,Logout Check After Show Writer Page
+    if(user){
+      navigate('writer')
+    }else{
+      navigate('login')
+    }
+  }
 
   return (
     <div>
@@ -27,7 +38,7 @@ function Header() {
               </svg>
             </a>
           </li>
-          <li><a href="/#">Share</a></li>
+          <li onClick={UserCheck}><a href="/#">Share</a></li>
           <li><a href="/#">Discover</a></li>
           <li><a href="/#">Connect</a></li>
           <li>
@@ -38,7 +49,7 @@ function Header() {
         </ul>
         <ul>
           <li className='heading'><a href="/#">MainIdea</a></li>
-          <li className='hideOnMobile'><a href="/#">Share</a></li>
+          <li className='hideOnMobile' onClick={UserCheck}><a href="/#">Share</a></li>
           <li className='hideOnMobile'><a href="/#">Discover</a></li>
           <li className='hideOnMobile'><a href="/#">Connect</a></li>
           <li className='hideOnMobile'>

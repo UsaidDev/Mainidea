@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FirebaseContext } from '../../store/FirebaseContext';
 import './Login.css';
 
 function Login() {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,17 +22,17 @@ function Login() {
   };
   return (
     <div>
-        <div className="wrapper">
-          <h1>Login</h1>
-          <form>
-            <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-            <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
-          </form>
-          <button onClick={handleSubmit}>Login</button>
-          <div className="member">
-            Not a member? <Link to={'/signup'}>Register Now</Link>
-          </div>
+      <div className="wrapper">
+        <h1>Login</h1>
+        <form>
+          <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+        </form>
+        <button onClick={handleSubmit}>Login</button>
+        <div className="member">
+          Not a member? <Link to={'/signup'}>Register Now</Link>
         </div>
+      </div>
     </div>
   );
 }

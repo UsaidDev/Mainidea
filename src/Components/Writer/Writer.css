@@ -1,0 +1,32 @@
+.writer{
+    height: 50px;
+    width: auto;
+    background-color: rgb(0, 255, 0);
+}
+.writer h5{
+    color: white;
+    align-items: center;
+    justify-content: end;
+    text-align: center;
+    padding-top: 10px;
+}
+.writing-page{
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    top: 40%;
+}
+.writing-page input{
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+.outer{
+    height: 400px;
+    width: auto;
+    border: 1px solid;
+    border-radius: 10px;
+}
