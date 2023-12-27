@@ -38,7 +38,7 @@ function Header() {
               </svg>
             </a>
           </li>
-          <li onClick={UserCheck}><a href="/#">Share</a></li>
+          <li onClick={UserCheck}><span className='uniqe'>Share</span></li>
           <li><a href="/#">Discover</a></li>
           <li><a href="/#">Connect</a></li>
           <li>
@@ -49,7 +49,7 @@ function Header() {
         </ul>
         <ul>
           <li className='heading'><a href="/#">MainIdea</a></li>
-          <li className='hideOnMobile' onClick={UserCheck}><a href="/#">Share</a></li>
+          <li className='hideOnMobile' onClick={UserCheck}><span className='uniqe'>Share</span></li>
           <li className='hideOnMobile'><a href="/#">Discover</a></li>
           <li className='hideOnMobile'><a href="/#">Connect</a></li>
           <li className='hideOnMobile'>

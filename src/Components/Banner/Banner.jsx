@@ -9,7 +9,7 @@ function Banner() {
           <h2>Share Your Ideas and Thoughts 💯!!</h2>
           <p>Connect with a community of like-minded individuals</p>
           <div className="">
-            <button type='button' className='getstarted'><span></span>GetStarted</button>
+            <button type='button' className='getstarted'>GetStarted</button>
           </div>
         </div>
       </div>
