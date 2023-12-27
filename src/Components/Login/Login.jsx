@@ -1,26 +1,25 @@
 import React, { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { FirebaseContext } from '../../store/FirebaseContext';
 import './Login.css';
 
 function Login() {
+  const navigate=useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const { firebase } = useContext(FirebaseContext);
-  const navigate = useNavigate();
 
   const handleSubmit = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(() => {
         alert("Login Successful");
-        navigate('/');
+        navigate('/writer')
       })
       .catch((error) => {
-        alert(error);
+        alert(error)
       });
   };
-
   return (
     <div>
         <div className="wrapper">

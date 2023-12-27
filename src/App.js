@@ -4,7 +4,7 @@ import Home from './Page/Home';
 import Login from './Page/Login'
 import Signup from './Page/Signup';
 import { AuthContext, FirebaseContext } from './store/FirebaseContext';
-
+import Writer from './Components/Writer/Writer';
 function App() {
   const {Setuser} = useContext(AuthContext)
   const {firebase}=useContext(FirebaseContext)
@@ -21,6 +21,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/writer' element={<Writer />} />
       </Routes>
     </div>
   )
