@@ -1,18 +1,27 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
 import './Writer.css'
 import { AuthContext } from '../../store/FirebaseContext'
-
+import { FirebaseContext } from '../../store/FirebaseContext';
 function Writer() {
   const { user } = useContext(AuthContext)
   const [datas, Setdatas] = useState('');
   const [todo, Settodo] = useState([])
-
+  const { firebase } = useContext(FirebaseContext)
   const AddList = () => {
-    Settodo([...todo, { list: datas,id:Date.now()}])
+    Settodo([...todo, { list: datas, id: Date.now() }])
     Setdatas('')
+    const UserName=user.displayName
+    firebase.firestore().collection('datas').add({
+      datas: datas,
+      UserName:UserName,
+    }).then(() => {
+      alert('Collection Created Successfully')
+    }).catch((error) => {
+      alert("Collection Creation Issue")
+    })
   }
-  const DeleteList=(id)=>{
-    Settodo(todo.filter((datas)=>datas.id !==id))
+  const DeleteList = (id) => {
+    Settodo(todo.filter((datas) => datas.id !== id))
   }
   useEffect(() => {
     ref.current.focus();
@@ -32,7 +41,7 @@ function Writer() {
               <>
                 <div class="writer-display" key={datas.list}>
                   <ul>
-                  <div class="btn btn-primary Delete-btn" onClick={(()=>DeleteList(datas.id))}>Delete</div>
+                    <div class="btn btn-primary Delete-btn" onClick={(() => DeleteList(datas.id))}>Delete</div>
                     <li>{datas.list}</li>
                   </ul>
                 </div>
