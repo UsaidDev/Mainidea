@@ -1,21 +1,25 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Writer.css'
-import { AuthContext } from '../../store/FirebaseContext'
-import { FirebaseContext } from '../../store/FirebaseContext';
+import { FirebaseContext,AuthContext } from '../../store/FirebaseContext';
+
 function Writer() {
   const { user } = useContext(AuthContext)
   const [datas, Setdatas] = useState('');
   const [todo, Settodo] = useState([])
   const { firebase } = useContext(FirebaseContext)
+  const navigate=useNavigate()
   const AddList = () => {
     Settodo([...todo, { list: datas, id: Date.now() }])
     Setdatas('')
-    const UserName=user.displayName
+    const UserName = user.displayName
+    const date=new Date()
     firebase.firestore().collection('datas').add({
       datas: datas,
-      UserName:UserName,
+      UserName: UserName,
+      createDate:date.toDateString()
     }).then(() => {
-      alert('Collection Created Successfully')
+      navigate('/')
     }).catch((error) => {
       alert("Collection Creation Issue")
     })
