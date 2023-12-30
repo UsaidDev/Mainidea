@@ -1,6 +1,24 @@
 import React from 'react'
 import './Banner.css'
+import {useEffect,useContext,useState} from 'react'
+import { FirebaseContext } from '../../store/FirebaseContext'
 function Banner() {
+  const {firebase}=useContext(FirebaseContext)
+  const [products,Setproducts]=useState([])
+  useEffect(()=>{
+    firebase.firestore().collection('datas').get().then((snapshot)=>{
+      const Allpost=snapshot.docs.map((datas)=>{
+        return {
+          ...datas.data(),
+          id:datas.id
+        }
+        
+      })
+      console.log(Allpost)
+      Setproducts(Allpost)
+    })
+  },[])
+
   return (
     <>
       {/*-----BANNER-----*/}
@@ -51,6 +69,13 @@ function Banner() {
           </div>
         </div>
       </div>
+      {
+        products.map((data)=>(
+          <>
+          <p>{data.datas}</p>
+          </>
+        ))
+      }
       {/*-----END FEATURE-----*/}
 
     </>
