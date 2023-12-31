@@ -71,7 +71,7 @@ function Banner() {
       </div>
       {
         products.map((data)=>(
-          <div key={data.data}>
+          <div key={data.id}>
           <p>{data.datas}</p>
           </div>
         ))
