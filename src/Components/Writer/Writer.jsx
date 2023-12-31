@@ -36,7 +36,6 @@ function Writer() {
           <div class="writer-btn">
             <div class="btn btn-success Add-btn" onClick={AddList}>Add</div>
           </div>
-          
         </div>
       </div>
     </>
