@@ -14,10 +14,10 @@ function Banner() {
         }
         
       })
-      console.log(Allpost)
-      Setproducts(Allpost)
+      console.log(Allpost);
+      Setproducts(Allpost);
     })
-  },[])
+  },[firebase]);
 
   return (
     <>
@@ -71,9 +71,9 @@ function Banner() {
       </div>
       {
         products.map((data)=>(
-          <>
+          <div key={data.data}>
           <p>{data.datas}</p>
-          </>
+          </div>
         ))
       }
       {/*-----END FEATURE-----*/}

@@ -25,12 +25,12 @@ function Writer() {
   useEffect(() => {
     ref.current.focus();
   })
-  const ref = useRef('null')
+  const ref = useRef('null');
   return (
     <>
       <div class="writer-container">
         <div class="writer-page">
-          <h5>Welcome, <span id="userName">{user ? user.displayName : "Login"}</span></h5>
+          <h5>Welcome, <span id="userName">{user ? user.displayName : "Login"} </span></h5>
           <textarea cols="40" rows="3" value={datas} onChange={((e) => Setdatas(e.target.value))} placeholder='Write Your Thouts..' ref={ref}></textarea>
           <div class="writer-btn">
             <div class="btn btn-success Add-btn" onClick={AddList}>Add</div>
@@ -38,6 +38,6 @@ function Writer() {
         </div>
       </div>
     </>
-  )
-}
-export default Writer
+  );
+};
+export default Writer;
