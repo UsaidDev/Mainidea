@@ -32,6 +32,8 @@
     overflow: hidden;
     color: #333;
 }
+
+
 /*------Video Add checyyan--*/
 .banner {
     height: 400px;
@@ -41,7 +43,6 @@
 .feature {
     height: 400px;
     width: auto;
-    background-color: gray;
 }
 
 @media(max-width:400px) {
@@ -76,50 +77,20 @@
 
 
 /*-----Feature------*/
-.feature-para p {
-    font-size: 20px;
-}
 
-.feature-box {
-    height: 100px;
-    width: auto;
-    background-color: rgba(43, 21, 66, 0.267);
-    border-radius: 15px;
-    margin-top: 10px;
-}
 
-.feature-box h4 {
+.card{
     margin: auto;
-    text-align: start;
-    justify-content: start;
-    font-size: 20px;
+    justify-content: center;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 20px;
 }
-
-
-@media(max-width:600px) {
-    .feature {
-        height: 600px;
-        width: auto;
-        background-color: rgba(53, 26, 82, 0.267);
-    }
+.card-time{
+    text-align: end;
+    font-size: 12px;
 }
-
-@media only screen and (min-width: 768px) {
-    .feature {
-        height: 350px;
-        width: auto;
-        background-color: rgba(53, 26, 82, 0.267);
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .feature {
-        height: 400px;
-        width: auto;
-        background-color: rgba(0, 0, 0, 0.267);
-    }
-}
-
 /*-----End Feature------*/
 
 
