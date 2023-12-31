@@ -17,7 +17,6 @@ function Writer() {
       UserName: UserName,
       createDate: date.toDateString(),
     }).then(() => {
-      console.log(date.toDateString())
       navigate('/')
     }).catch((error) => {
       alert("Collection Creation Issue")
