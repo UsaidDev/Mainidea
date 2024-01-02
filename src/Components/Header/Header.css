@@ -3,14 +3,6 @@
     padding: 0;
 }
 
-body {
-    min-height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 nav {
     background-color: white;
     box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.1);

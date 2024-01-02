@@ -1,0 +1,12 @@
+.notpage{
+    height: 100vh;
+}
+.notpage h3{
+    text-align: center;
+    margin-top: 100px;
+    font-family: sans-serif;
+}
+.notpage h5{
+    text-align: center;
+    text-decoration: none !important;
+}

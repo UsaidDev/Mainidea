@@ -34,7 +34,7 @@ function Signup() {
                     <input type="password" value={password} placeholder='Password' onChange={((e) => Setpassword(e.target.value))} />
                     <input type="text" placeholder='Re-Enter password' />
                 </form>
-                <button onClick={handleSubmit}>Signup</button>
+                <button onClick={handleSubmit} className='signup-button'>Signup</button>
                 <div className="member">
                     Already a member? <Link to={'/login'} >
                         login here

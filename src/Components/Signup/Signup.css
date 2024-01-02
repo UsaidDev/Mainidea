@@ -30,7 +30,7 @@ form input{
     border-radius:20px ;
     background: #e4e4e4;
 }
-button{
+.signup-button{
     font-size: 1rem;
     margin-top: 1.8rem;
     padding: 10px 0;
@@ -42,7 +42,7 @@ button{
     color: #fff;
     cursor: pointer;
 }
-button:hover{
+.signup-button:hover{
     background: rgb(17, 107, 143,0.877);
 }
 input:focus{

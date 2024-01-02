@@ -2,9 +2,13 @@ import React from 'react'
 import './Banner.css'
 import { useEffect, useContext, useState } from 'react'
 import { FirebaseContext } from '../../store/FirebaseContext'
+import { LikeContext } from '../../store/LikeContext'
+
 function Banner() {
   const { firebase } = useContext(FirebaseContext)
+  const {like,Setlike}=useContext(LikeContext)
   const [products, Setproducts] = useState([])
+
   useEffect(() => {
     firebase.firestore().collection('datas').get().then((snapshot) => {
       const Allpost = snapshot.docs.map((datas) => {
@@ -12,12 +16,20 @@ function Banner() {
           ...datas.data(),
           id: datas.id
         }
-
       })
-      console.log(Allpost);
       Setproducts(Allpost);
     })
   }, [firebase]);
+
+  const AddLike=()=>{
+    Setlike(like+1)
+    console.log(like)
+  }
+  
+  const Dislike=()=>{
+    Setlike(like-1)
+    console.log(like)
+  }
 
   return (
     <>
@@ -35,6 +47,7 @@ function Banner() {
       {/*-----FEATURE-----*/}
       <div className="feature">
         {
+        
           products.map((data) => (
             <>
               <div className="card">
@@ -42,6 +55,10 @@ function Banner() {
                   <div className="card-title text-center">{data.UserName}</div>
                   <div className="card-text text-center">{data.datas}</div>
                   <div className="card-time text-info">{data.createDate}</div>
+                  <div className="openion">
+                    <button id='like' onClick={AddLike}>Like</button>
+                    <button id='dislike' onClick={Dislike}>Dislike</button>
+                  </div>
                 </div>
               </div>
             </>
