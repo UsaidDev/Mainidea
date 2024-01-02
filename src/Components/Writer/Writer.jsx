@@ -8,7 +8,7 @@ function Writer() {
   const [datas, Setdatas] = useState('');
   const { firebase } = useContext(FirebaseContext)
   const navigate = useNavigate()
-  const [show,Setshow]=useState([])
+  const [show, Setshow] = useState([])
 
   const AddList = () => {
     Setdatas('')
@@ -24,22 +24,22 @@ function Writer() {
       alert("Collection Creation Issue")
     })
   }
-  const DeleteList=()=>{
-
+  const DeleteList = () => {
+    console.log(show)
   }
-  
+
   useEffect(() => {
     ref.current.focus();
-    firebase.firestore().collection('datas').get().then((Snapshot)=>{
-      const Alldatas= Snapshot.docs.map((datas)=>{
-        return{
+    firebase.firestore().collection('datas').get().then((Snapshot) => {
+      const Alldatas = Snapshot.docs.map((datas) => {
+        return {
           ...datas.data(),
-          id:datas.id
+          id: datas.id
         }
       })
       Setshow(Alldatas)
     })
-  },[firebase])
+  }, [firebase])
   const ref = useRef('null');
   return (
     <>
