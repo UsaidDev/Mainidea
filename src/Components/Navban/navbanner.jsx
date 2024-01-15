@@ -1,7 +1,7 @@
-import React from 'react'
-import './Navbanner.css'
-import Profile from '../../assets/IMG_20231105_191819_182.jpg'
-import Logo from '../../assets/IMG_20231104_010107_045.jpg'
+import React from 'react';
+import './Navbanner.css';
+import Profile from '../../assets/IMG_20231105_191819_182.jpg';
+import Logo from '../../assets/IMG_20231104_010107_045.jpg';
 
 function navbanner() {
   return (
@@ -9,7 +9,7 @@ function navbanner() {
       <div className="container">
         <div class="sidebar">
           <div class="head">
-            <img src={Logo} alt="Image-1" />
+            <img src={Logo} alt="Image1" />
             <div class="detials">
               <ul>
                 <li><i class="fa fa-home" aria-hidden="true"></i>Home</li>
@@ -18,7 +18,7 @@ function navbanner() {
                 <li><i class="fa-regular fa-heart"></i>Like</li>
               </ul>
               <div class="profile">
-                <img src={Profile} alt="Image-2" />
+                <img src={Profile} alt="Image2" />
               </div>
             </div>
           </div >
