@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Desctop Navbar */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.Posts {
+    flex: 84% 1;
+    height: 100vh;
+
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: gainsboro;
+    flex: 20%;
+}
+
+.profile {
+    margin: 20px;
+    margin-top: 40px;
+
+}
+
+.profile img {
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.head img {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.detials li {
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+    font-family: sans-serif;
+}
+
+.detials li:hover {
+    background-color: lightblue;
+}
+
+.detials i {
+    margin-left: 10px;
+    font-size: 25px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* End desctop navbar */
+.sm-navbar {
+    padding: 10px 20px;
+    display: flex;
+    width: 90% auto;
+}
+
+.sm-navbar ul {
+    flex: 1;
+    text-align: right;
+}
+
+.logo {
+    display: none;
+}
+
+.mobile-list {
+    color: white;
+    display: none;
+}
+
+.settings {
+    display: none;
+}
+
+.icon-logo {
+    display: none;
+}
+
+.outer-box {
+    margin: 10px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 30%;
+    padding: 20px;
+    line-height: 2rem;
+    font-family: sans-serif;
+}
+
+@media only screen and (max-width:800px) {
+    .outer-box {
+        margin: 10px auto;
+        border: 1px solid;
+        border-radius: 10px;
+        width: 50%;
+        margin-top: 30px;
+        padding: 20px;
+        line-height: 2rem;
+        font-family: sans-serif;
+    }
+
+    .sm-navbar {
+        background-color: #E1EBEF;
+    }
+
+    .logo {
+        text-align: center;
+        margin: auto;
+        font-family: sans-serif;
+        display: flex;
+    }
+
+    .navbar h3 {
+        color: #073B4C;
+    }
+
+    .navbar-desctop {
+        display: none;
+        background-color: #fff;
+    }
+
+    .mobile-list {
+        display: flex;
+        bottom: 0;
+        justify-content: center;
+        position: fixed;
+        color: #073B4C;
+        position: fixed;
+        left: 0;
+        background-color: #E1EBEF;
+        width: 100%;
+        transition: 0.3s;
+        padding: 0;
+        right: 0;
+        margin: 0;
+    }
+
+    .mobile-list li i {
+        font-size: 30px;
+        background: none;
+        margin: 0 10px;
+        padding: 0;
+        color: #073B4C;
+
+    }
+
+    .mobile-list li {
+        margin: 0 15px 0;
+    }
+
+    .mobile-list li svg {
+        width: 40px;
+        height: 40px;
+        stroke: #164757;
+        fill: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .settings {
+        display: flex;
+        background: none;
+        color: #073B4C;
+        justify-content: end;
+        padding: 0;
+        margin: 0;
+        margin-top: 14px;
+        cursor: pointer;
+    }
+
+    .icon-logo {
+        display: flex;
+        flex: 1;
+        margin-top: 6px;
+    }
+
+    .icon-logo img {
+        border-radius: 3rem;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    .navbar ul li {
+        display: inline;
+        padding: 0;
+        font-size: 18px;
+        font-family: sans-serif;
+    }
+
+    .container {
+        display: flex;
+        height: 0;
+    }
+
+    .Posts {
+        margin-top: 70px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}

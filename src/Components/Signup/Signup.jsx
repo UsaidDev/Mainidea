@@ -18,12 +18,12 @@ function Signup() {
                     username: username,
                     email: email
                 }).then(() => {
-                    alert("Account Created Successfully")
-                    navigate('/login')
-                })
-            })
-        })
-    }
+                    alert("Account Created Successfully");
+                    navigate('/login');
+                });
+            });
+        });
+    };
     return (
         <div>
             <div className="wrapper">
@@ -32,7 +32,6 @@ function Signup() {
                     <input type="text" value={username} placeholder='Username' onChange={((e) => Setusername(e.target.value))} />
                     <input type="email" value={email} placeholder='Email' onChange={((e) => Setemail(e.target.value))} />
                     <input type="password" value={password} placeholder='Password' onChange={((e) => Setpassword(e.target.value))} />
-                    <input type="text" placeholder='Re-Enter password' />
                 </form>
                 <button onClick={handleSubmit} className='signup-button'>Signup</button>
                 <div className="member">
@@ -42,7 +41,7 @@ function Signup() {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Signup
+export default Signup;

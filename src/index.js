@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { FirebaseContext } from './store/FirebaseContext';
 import firebase from './Firebase/config'; // Update the import
 import Context from '../src/store/FirebaseContext'
-import ContextLike from './store/LikeContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,9 +14,7 @@ root.render(
     <Router>
       <FirebaseContext.Provider value={{ firebase }}>
         <Context>
-          <ContextLike>
             <App />
-          </ContextLike>
         </Context>
       </FirebaseContext.Provider>
     </Router>

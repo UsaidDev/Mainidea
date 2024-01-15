@@ -8,7 +8,6 @@ function Writer() {
   const [datas, Setdatas] = useState('');
   const { firebase } = useContext(FirebaseContext)
   const navigate = useNavigate()
-  const [show, Setshow] = useState([])
 
   const AddList = () => {
     Setdatas('')
@@ -24,22 +23,11 @@ function Writer() {
       alert("Collection Creation Issue")
     })
   }
-  const DeleteList = () => {
-    console.log(show)
-  }
-
   useEffect(() => {
     ref.current.focus();
-    firebase.firestore().collection('datas').get().then((Snapshot) => {
-      const Alldatas = Snapshot.docs.map((datas) => {
-        return {
-          ...datas.data(),
-          id: datas.id
-        }
-      })
-      Setshow(Alldatas)
-    })
+
   }, [firebase])
+
   const ref = useRef('null');
   return (
     <>
@@ -49,9 +37,9 @@ function Writer() {
           <textarea cols="40" rows="3" value={datas} onChange={((e) => Setdatas(e.target.value))} placeholder='Write Your Thouts..' ref={ref}></textarea>
           <div class="writer-btn">
             <div class="btn btn-success Add-btn" onClick={AddList}>Add</div>
-            <div class="btn btn-danger Add-btn" onClick={DeleteList}>Delete</div>
           </div>
         </div>
+
       </div>
     </>
   );

@@ -1,12 +1,10 @@
 import React from 'react'
-import Navbar from '../Components/Header/Header'
-import Banner from '../Components/Banner/Banner'
 import FooterPage from '../Components/Footer/Footer'
+import Navbanner from '../Components/Navban/navbanner';
 function Home() {
     return (
         <div>
-            <Navbar />
-            <Banner />
+            <Navbanner />
             <FooterPage />
         </div>
     )
