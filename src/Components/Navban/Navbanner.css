@@ -97,50 +97,51 @@
 .icon-logo {
     display: none;
 }
-
-.outer-box {
-    margin: 10px;
-    border: 1px solid blue;
-    border-radius: 10px;
-    margin-top: 30px;
-    width: 30%;
-    padding: 20px;
-    line-height: 2rem;
-    font-family: sans-serif;
+.explore{
+    display: none;
 }
-
 @media only screen and (max-width:800px) {
-    .outer-box {
-        margin: 10px auto;
-        border: 1px solid;
-        border-radius: 10px;
-        width: 50%;
+    .explore{
+        display: flex;
+        margin:10px auto;
+        justify-content: center;
+        align-items: center;
         margin-top: 30px;
-        padding: 20px;
-        line-height: 2rem;
-        font-family: sans-serif;
     }
-
+    .foryou-btn{
+        padding: 5px;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        font-size: 0.9rem;
+        background-color: hsl(195, 83%, 16%);
+        color: whitesmoke;
+    }
+    .explore-btn{
+        padding: 5px;
+        width: 150px;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        background-color: #1E83A4;
+        color: whitesmoke;
+    }
     .sm-navbar {
         background-color: #E1EBEF;
     }
-
     .logo {
         text-align: center;
         margin: auto;
         font-family: sans-serif;
         display: flex;
     }
-
     .navbar h3 {
         color: #073B4C;
     }
-
     .navbar-desctop {
         display: none;
         background-color: #fff;
     }
-
     .mobile-list {
         display: flex;
         bottom: 0;
@@ -183,11 +184,11 @@
         display: flex;
         background: none;
         color: #073B4C;
-        justify-content: end;
         padding: 0;
         margin: 0;
         margin-top: 14px;
         cursor: pointer;
+        justify-content: flex-end;
     }
 
     .icon-logo {

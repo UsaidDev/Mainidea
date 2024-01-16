@@ -24,8 +24,11 @@ function navbanner() {
           </div >
         </div >
         <div className="Posts">
-          <div className="outer-box">
-            <p>Lorem ipsum dolor sit amet <span style={{background:'gold'}}>consectetur</span> adipisicing elit. Suscipit neque, tempore provident in dolores possimus dolor soluta dicta ut debitis aperiam temporibus consectetur? Placeat ab nihil sit itaque aliquid odit!</p>
+          <div className="explore">
+            <button className='foryou-btn'>
+              foryou
+              <button className='explore-btn'>explore</button>
+            </button>
           </div>
         </div>
       </div>
