@@ -17,7 +17,6 @@
 .Posts {
     flex: 84% 1;
     height: 100vh;
-
 }
 
 .sidebar {
@@ -97,18 +96,53 @@
 .icon-logo {
     display: none;
 }
-.explore{
+
+.explore {
+    display: none;
+}
+.post-body{
     display: none;
 }
 @media only screen and (max-width:800px) {
-    .explore{
+    .date-time{
+        text-align: end;
+        justify-content: end;
+        position:relative;
+        margin-top: 5px;
+    }
+    .user-logo img {
+        height: 140px;
+        width: 140px;
+        padding: 5px;
+        flex: 20%;
+        border-radius: 10px;
+    }
+
+    .user-data {
+        margin: 10px;
+        font-family: 'Poppins',sans-serif;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .post-body {
         display: flex;
-        margin:10px auto;
+        margin: 20px;
+        align-items: center;
+        border: 1px solid #1E83A4;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .explore {
+        display: flex;
+        margin: 10px auto;
         justify-content: center;
         align-items: center;
         margin-top: 30px;
     }
-    .foryou-btn{
+
+    .foryou-btn {
         padding: 5px;
         border-radius: 20px;
         outline: none;
@@ -117,7 +151,8 @@
         background-color: hsl(195, 83%, 16%);
         color: whitesmoke;
     }
-    .explore-btn{
+
+    .explore-btn {
         padding: 5px;
         width: 150px;
         border-radius: 20px;
@@ -126,22 +161,39 @@
         background-color: #1E83A4;
         color: whitesmoke;
     }
+
     .sm-navbar {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        color: #073B4C;
+        position: fixed;
+        left: 0;
         background-color: #E1EBEF;
+        width: 100%;
+        transition: 0.3s;
+        padding: 0px;
+        right: 0;
+        margin: 0;
+        
     }
+
     .logo {
         text-align: center;
         margin: auto;
         font-family: sans-serif;
         display: flex;
     }
+
     .navbar h3 {
         color: #073B4C;
     }
+
     .navbar-desctop {
         display: none;
         background-color: #fff;
     }
+
     .mobile-list {
         display: flex;
         bottom: 0;
@@ -186,7 +238,7 @@
         color: #073B4C;
         padding: 0;
         margin: 0;
-        margin-top: 14px;
+        margin-top: 20px;
         cursor: pointer;
         justify-content: flex-end;
     }
@@ -202,6 +254,7 @@
         height: 50px;
         width: 50px;
         cursor: pointer;
+        margin: 5px;
     }
 
     .navbar ul li {

@@ -8,7 +8,7 @@ function Signup() {
     const [username, Setusername] = useState('');
     const [email, Setemail] = useState('');
     const [password, Setpassword] = useState('');
-    const { firebase } = useContext(FirebaseContext)
+    const { firebase } = useContext(FirebaseContext);
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
