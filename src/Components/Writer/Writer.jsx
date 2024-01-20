@@ -1,45 +1,44 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Writer.css'
 import { FirebaseContext, AuthContext } from '../../store/FirebaseContext';
 
 function Writer() {
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+  const { firebase } = useContext(FirebaseContext);
   const [datas, Setdatas] = useState('');
-  const { firebase } = useContext(FirebaseContext)
-  const navigate = useNavigate()
+  const [image, Setimage] = useState('');
+  const navigate = useNavigate();
+  const date = new Date()
 
-  const AddList = () => {
-    Setdatas('')
-    const UserName = user.displayName
-    const date = new Date()
-    firebase.firestore().collection('datas').add({
-      datas: datas,
-      UserName: UserName,
-      createDate: date.toDateString(),
-    }).then(() => {
-      navigate('/')
-    }).catch((error) => {
-      alert("Collection Creation Issue")
+  const handleSubmit = () => {
+    firebase.storage().ref(`/image/${image.name}`).put(image).then(({ ref }) => {
+      ref.getDownloadURL().then((url) => {
+        firebase.firestore().collection("Datas").add({
+          Username: user.displayName,
+          Datas: datas,
+          userId: user.uid,
+          currectDate: date.toDateString(),
+          url: url
+        })
+        navigate('/')
+      })
     })
   }
-  useEffect(() => {
-    ref.current.focus();
 
-  }, [firebase])
 
-  const ref = useRef('null');
   return (
     <>
-      <div class="writer-container">
-        <div class="writer-page">
-          <h5>Welcome, <span id="userName">{user ? user.displayName : "Login"} </span></h5>
-          <textarea cols="40" rows="3" value={datas} onChange={((e) => Setdatas(e.target.value))} placeholder='Write Your Thouts..' ref={ref}></textarea>
-          <div class="writer-btn">
-            <div class="btn btn-success Add-btn" onClick={AddList}>Add</div>
-          </div>
-        </div>
-
+      <div className="writer-wrapper">
+        <h1>Write Your <span style={{ background: 'gold', color: "whitesmoke" }}>Thouts</span> And ideas</h1>
+        <form>
+          <textarea name="Enter Details" id="" cols="40" rows="3" onChange={((e) => Setdatas(e.target.value))}></textarea>
+        </form>
+        <form>
+          <input type="file" onChange={(e) => Setimage(e.target.files[0])} className='file-insert' />
+          <img src={image ? URL.createObjectURL(image) : ''} alt="Addimage" className='writer-image' />
+        </form>
+        <button onClick={handleSubmit} className='submit-button'>Submit</button>
       </div>
     </>
   );

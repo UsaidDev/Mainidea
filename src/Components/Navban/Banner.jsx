@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Banner.css';
 import Profile from '../../assets/IMG_20231104_010107_045.jpg';
 import Logo from '../../assets/IMG_20231104_010107_045.jpg';
 import { Link } from 'react-router-dom';
-
+import { AuthContext, FirebaseContext } from '../../store/FirebaseContext'
 function Banner() {
-    
+    const { user, Setuser } = useContext(AuthContext);
+    const { firebase } = useContext(FirebaseContext);
+    const [Details, SetDetails] = useState([])
+
+    useEffect(() => {
+        firebase.firestore().collection('Datas').get().then((snapshot) => {
+            const Allpost = snapshot.docs.map((UserDetails) => {
+                return {
+                    ...UserDetails.data(),
+                    id: UserDetails.id
+                }
+            })
+            SetDetails(Allpost)
+            console.log(Details)
+        })
+        firebase.auth().onAuthStateChanged((user) => {
+            Setuser(user);
+        })
+    },);
     return (
         <div>
             <div className="container">
@@ -25,7 +43,6 @@ function Banner() {
                         </div>
                     </div >
                 </div >
-
                 <div className="Posts">
                     <div className="explore">
                         <button className='foryou-btn'>
@@ -33,15 +50,22 @@ function Banner() {
                             <button className='explore-btn'>explore</button>
                         </button>
                     </div>
-                    <div className="post-body">
-                        <div className="user-logo">
-                            <img src={Logo} alt="userlogo" />
-                        </div>
-                        <div className="user-data">
-                            amet vero, distinctio inventore illum assumenda nam atque nisi rem delectus dicta voluptatem quis similique.
-                            <div className="date-time">1/17/24</div>
-                        </div>
-                    </div>
+                    {
+                        Details.map((datas) => (
+                            <>
+                                <div className="post-body" key={datas}>
+                                    <div className="user-logo">
+                                        <img src={datas.url} alt="Image" />
+                                    </div>
+                                    <div className="user-data">
+                                        {datas.Datas}
+                                        <div className="date-time">{datas.currectDate}</div>
+                                        <p>{user ? user.displayName : 'login'}</p>
+                                    </div>
+                                </div>
+                            </>
+                        ))
+                    }
                 </div>
             </div>
 
