@@ -22,6 +22,7 @@ function Banner() {
         })
         firebase.auth().onAuthStateChanged((user) => {
             Setuser(user);
+            
         })
     },);
     return (
@@ -50,22 +51,19 @@ function Banner() {
                             <button className='explore-btn'>explore</button>
                         </button>
                     </div>
-                    {
-                        Details.map((datas) => (
-                            <>
-                                <div className="post-body" key={datas}>
-                                    <div className="user-logo">
-                                        <img src={datas.url} alt="Images" />
-                                    </div>
-                                    <div className="user-data">
-                                        {datas.Datas}
-                                        <div className="date-time">{datas.currectDate}</div>
-                                        <p>{user ? user.displayName : 'login'}</p>
-                                    </div>
-                                </div>
-                            </>
-                        ))
-                    }
+                    <div className="post-body">
+                        <div className="user-logo">
+                            <img src={Profile} alt="Images" />
+                        </div>
+                        <div className="user-data">
+                            {user ? user.displayName :'login'}
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur voluptas quidem minima pariatur laboriosam, perspiciatis temporibus fugit facere neque asperiores sed illum dolor laudantium quae dolorum modi, unde nihil velit.</p>
+                            <div className="date-time">1/3/2024</div>
+                        </div>
+                    </div>
+                </div>
+                <div className="more-deatils">
+
                 </div>
             </div>
 

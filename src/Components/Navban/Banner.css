@@ -15,14 +15,18 @@
 }
 
 .Posts {
-    flex: 84% 1;
+    flex: 40% 1;
     height: 100vh;
+    
 }
-
+.more-deatils{
+    flex: 20%;
+    background-color: whitesmoke;
+}
 .sidebar {
     height: 100vh;
     background-color: gainsboro;
-    flex: 20%;
+    flex: 10%;
 }
 
 .profile {
@@ -96,38 +100,80 @@
 .icon-logo {
     display: none;
 }
-
-.explore {
+.explore{
     display: none;
 }
 .post-body{
-    display: none;
+    margin:auto;
+    background-color: whitesmoke;
+    border: 1px solid #1E83A4;
+    width: 80vh;
+    margin-top: 50px;
+    border-radius: 10px;
+    display: flex;
+}
+.user-logo img {
+    width: auto;
+    padding: 5px;
+    flex: 40%;
+    border-radius: 10px;
+    flex: 84% 1;
+    height: 30vh;
+}
+.user-data{
+    flex: 20%;
+    height: 30vh;
+    overflow:scroll;
+    padding: 10px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 16px;
+}
+.date-time{
+    margin-top: 20%;
+    text-align: end;
+    font-weight: 500;
+    font-family: sans-serif;
 }
 @media only screen and (max-width:800px) {
-    .date-time{
+    .more-deatils{
+        display: none;
+    }
+    .date-time {
         text-align: end;
         justify-content: end;
-        position:relative;
+        position: relative;
         margin-top: 5px;
     }
     .user-logo img {
-        height: 140px;
-        width: 140px;
+        width: auto;
         padding: 5px;
         flex: 20%;
         border-radius: 10px;
+        flex: 84% 1;
+        height: 20vh;
     }
-
-    .user-data {
-        margin: 10px;
+    .user-data{
+        flex: 20%;
+        height: 20vh;
+        overflow:scroll;
+    }
+    .user-data p{
         font-family: 'Poppins',sans-serif;
-        font-size: 13px;
-        width: 100%;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 4px;
     }
-
+    .date-time{
+        top: 30px;
+        font-family: sans-serif;
+        font-size: 0.9rem;
+        bottom: 0;
+        margin: 0;
+        left: 0;
+    }
     .post-body {
         display: flex;
-        margin: 20px;
+        margin: 30px;
         align-items: center;
         border: 1px solid #1E83A4;
         border-radius: 10px;
@@ -175,7 +221,7 @@
         padding: 0px;
         right: 0;
         margin: 0;
-        
+
     }
 
     .logo {
