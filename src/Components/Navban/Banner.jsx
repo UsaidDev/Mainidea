@@ -7,7 +7,7 @@ import { AuthContext, FirebaseContext } from '../../store/FirebaseContext'
 function Banner() {
     const { user, Setuser } = useContext(AuthContext);
     const { firebase } = useContext(FirebaseContext);
-    const [Details, SetDetails] = useState([])
+    const [Details, SetDetails] = useState([]);
 
     useEffect(() => {
         firebase.firestore().collection('Datas').get().then((snapshot) => {
