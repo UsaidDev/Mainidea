@@ -55,7 +55,7 @@ function Banner() {
                             <>
                                 <div className="post-body" key={datas}>
                                     <div className="user-logo">
-                                        <img src={datas.url} alt="Image" />
+                                        <img src={datas.url} alt="Images" />
                                     </div>
                                     <div className="user-data">
                                         {datas.Datas}
