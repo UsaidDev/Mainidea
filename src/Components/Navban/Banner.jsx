@@ -22,7 +22,6 @@ function Banner() {
         })
         firebase.auth().onAuthStateChanged((user) => {
             Setuser(user);
-
         })
     },);
     return (
@@ -30,7 +29,7 @@ function Banner() {
             <div className="container">
                 <div class="sidebar">
                     <div class="head">
-                        <img src={Logo} alt="Image1" />
+                        <Link to={'/profile'}><img src={Logo} alt="Image1" /></Link>
                         <div class="detials">
                             <ul>
                                 <Link to={'/'}><li><i class="fa fa-home" aria-hidden="true"></i>Home</li></Link>
@@ -74,7 +73,7 @@ function Banner() {
             </div>
 
             <nav class="sm-navbar">
-                <div class="icon-logo"><img src={Logo} alt="Image3" /></div>
+                <div class="icon-logo"><Link to={'profile'}><img src={Logo} alt="Image3" /></Link></div>
                 <h3 class="logo">Mainidea</h3>
 
                 <ul class="settings">
