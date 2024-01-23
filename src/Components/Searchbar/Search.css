@@ -1,0 +1,22 @@
+.Search-bar{
+    margin: 10px auto;
+    text-align: center;
+}
+.Search-bar p{
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.Search-bar input{
+    margin-top: 10px;
+    width: 60vh;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+    outline: none;
+}
+@media(max-width:576px){
+    .Search-bar input{
+        width: 75%;
+    }
+}

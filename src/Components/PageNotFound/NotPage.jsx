@@ -8,7 +8,7 @@ function NotPage() {
       <div className="notpage">
         <h3>Page Not Found</h3>
         <Link to={'/'}>
-          <h5>Click here</h5>
+          <h5>Go to home</h5>
         </Link>
       </div>
     </div>

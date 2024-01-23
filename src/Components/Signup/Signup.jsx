@@ -18,9 +18,10 @@ function Signup() {
                     username: username,
                     email: email
                 }).then(() => {
-                    alert("Account Created Successfully");
                     navigate('/login');
-                });
+                }).catch((error)=>{
+                    alert(error)
+                })
             });
         });
     };
@@ -43,5 +44,4 @@ function Signup() {
         </div>
     );
 };
-
 export default Signup;

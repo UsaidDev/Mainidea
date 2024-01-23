@@ -33,9 +33,9 @@ function Banner() {
                         <img src={Logo} alt="Image1" />
                         <div class="detials">
                             <ul>
-                                <li><i class="fa fa-home" aria-hidden="true"></i>Home</li>
-                                <li><i class="fas fa-search"></i>Search</li>
-                                <li><i class="fa-solid fa-pen"></i>Write</li>
+                                <Link to={'/'}><li><i class="fa fa-home" aria-hidden="true"></i>Home</li></Link>
+                                <Link to={'/search'}><li><i class="fas fa-search"></i>Search</li></Link>
+                                <Link to={'/writer'}><li><i class="fa-solid fa-pen"></i>Write</li></Link>
                                 <li><i class="fa-regular fa-heart"></i>Like</li>
                             </ul>
                             <div class="profile">
@@ -97,11 +97,13 @@ function Banner() {
                         </svg></li>
                     </Link>
 
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                        <path
-                            d="M20.3052 19.7257C21.83 18.1935 22.7724 16.0812 22.7724 13.7489C22.7724 9.06919 18.9788 5.27557 14.2991 5.27557C9.61942 5.27557 5.82581 9.06919 5.82581 13.7489C5.82581 18.4285 9.61942 22.2221 14.2991 22.2221C16.6464 22.2221 18.7707 21.2677 20.3052 19.7257ZM20.3052 19.7257L25.2887 24.7092"
-                            stroke="#073B4C" stroke-width="1.74809" stroke-linecap="round" />
-                    </svg></li>
+                    <Link to={'/search'}>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <path
+                                d="M20.3052 19.7257C21.83 18.1935 22.7724 16.0812 22.7724 13.7489C22.7724 9.06919 18.9788 5.27557 14.2991 5.27557C9.61942 5.27557 5.82581 9.06919 5.82581 13.7489C5.82581 18.4285 9.61942 22.2221 14.2991 22.2221C16.6464 22.2221 18.7707 21.2677 20.3052 19.7257ZM20.3052 19.7257L25.2887 24.7092"
+                                stroke="#073B4C" stroke-width="1.74809" stroke-linecap="round" />
+                        </svg></li>
+                    </Link>
 
                     <Link to={'/writer'}>
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">

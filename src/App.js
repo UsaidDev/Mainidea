@@ -1,11 +1,14 @@
 import React, { useEffect, useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Page/Home';
+import Writer from './Components/Writer/Writer';
+import Search from './Page/Search';
 import Login from './Page/Login'
 import Signup from './Page/Signup';
 import NotPage from './Page/NotPage';
+
 import { AuthContext, FirebaseContext } from './store/FirebaseContext';
-import Writer from './Components/Writer/Writer';
+
 
 function App() {
   const {Setuser} = useContext(AuthContext)
@@ -26,6 +29,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/writer' element={<Writer />} />
+        <Route path='/search' element={<Search />} />
         <Route path='*' element={<NotPage />} />
       </Routes>
     </div>
