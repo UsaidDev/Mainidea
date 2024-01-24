@@ -21,7 +21,6 @@ function Writer() {
           currectDate: date.toDateString(),
           url: url
         }).then(()=>{
-          alert('Datas Successfully Added');
           navigate('/');
         }).catch((error)=>{
           alert(error)

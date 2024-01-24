@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Banner.css';
 import Profile from '../../assets/IMG_20231104_010107_045.jpg';
 import Logo from '../../assets/IMG_20231104_010107_045.jpg';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext, FirebaseContext } from '../../store/FirebaseContext';
 function Banner() {
     const { user, Setuser } = useContext(AuthContext);
@@ -18,7 +18,7 @@ function Banner() {
                     id: UserDetails.id
                 }
             })
-            SetDetails(Allpost)
+            SetDetails(Allpost);
         })
         firebase.auth().onAuthStateChanged((Realuser) => {
             Setuser(Realuser)
