@@ -21,26 +21,25 @@ function Writer() {
           currectDate: date.toDateString(),
           url: url
         }).then(()=>{
-          alert('Datas Successfully Added')
-          navigate('/')
+          alert('Datas Successfully Added');
+          navigate('/');
         }).catch((error)=>{
           alert(error)
-        })
-      })
-    })
+        });
+      });
+    });
   }
-
-
   return (
     <>
       <div className="writer-wrapper">
-        <h1>Write Your <span style={{ background: 'gold', color: "whitesmoke" }}>Thouts</span> And ideas</h1>
+        <h1>Write Your Thouts And ideas</h1>
         <form>
-          <textarea name="Enter Details" id="" cols="40" rows="3" onChange={((e) => Setdatas(e.target.value))}></textarea>
+          <textarea name="Enter Details" id="" cols="40" rows="3" placeholder='Write your ideas' onChange={((e) => Setdatas(e.target.value))}></textarea>
         </form>
-        <form>
+        <form className='second-form'>
+        <img src={image ? URL.createObjectURL(image) : 'ggg'} alt="" className='writer-image' />
           <input type="file" onChange={(e) => Setimage(e.target.files[0])} className='file-insert' />
-          <img src={image ? URL.createObjectURL(image) : ''} alt="Addimage" className='writer-image' />
+
         </form>
         <button onClick={handleSubmit} className='submit-button'>Submit</button>
       </div>

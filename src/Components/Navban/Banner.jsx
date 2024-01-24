@@ -2,14 +2,15 @@ import React, { useContext, useEffect, useState } from 'react'
 import './Banner.css';
 import Profile from '../../assets/IMG_20231104_010107_045.jpg';
 import Logo from '../../assets/IMG_20231104_010107_045.jpg';
-import { Link } from 'react-router-dom';
-import { AuthContext, FirebaseContext } from '../../store/FirebaseContext'
+import { Link} from 'react-router-dom';
+import { AuthContext, FirebaseContext } from '../../store/FirebaseContext';
 function Banner() {
     const { user, Setuser } = useContext(AuthContext);
     const { firebase } = useContext(FirebaseContext);
     const [Details, SetDetails] = useState([]);
 
     useEffect(() => {
+        console.log(user)
         firebase.firestore().collection('Datas').get().then((snapshot) => {
             const Allpost = snapshot.docs.map((UserDetails) => {
                 return {
@@ -18,10 +19,9 @@ function Banner() {
                 }
             })
             SetDetails(Allpost)
-            console.log(Details)
         })
-        firebase.auth().onAuthStateChanged((user) => {
-            Setuser(user);
+        firebase.auth().onAuthStateChanged((Realuser) => {
+            Setuser(Realuser)
         })
     },);
     return (
@@ -75,7 +75,6 @@ function Banner() {
             <nav class="sm-navbar">
                 <div class="icon-logo"><Link to={'profile'}><img src={Logo} alt="Image3" /></Link></div>
                 <h3 class="logo">Mainidea</h3>
-
                 <ul class="settings">
                     <li><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="none">
                         <path
@@ -86,7 +85,6 @@ function Banner() {
                             stroke="#164757" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg></li>
                 </ul>
-
                 <ul class="mobile-list">
                     <Link to={'/'}>
                         <li><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">

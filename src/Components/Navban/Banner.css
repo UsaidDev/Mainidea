@@ -15,20 +15,22 @@
 }
 
 .Posts {
-    flex: 40% 1;
+    flex: 30% 1;
     height: 100vh;
     
 }
 .more-deatils{
-    flex: 20%;
+    flex: 1%;
     background-color: whitesmoke;
+    border: 10px;
 }
 .sidebar {
     height: 100vh;
     background-color: gainsboro;
     flex: 10%;
+    position: fixed;
+    width: 200px;
 }
-
 .profile {
     margin: 20px;
     margin-top: 40px;
@@ -152,7 +154,6 @@
         display:flex;
         width: 39vh;
         height: 40vh;
-        
     }
     .user-data{
         height: 20vh;
