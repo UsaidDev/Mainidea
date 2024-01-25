@@ -4,13 +4,13 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNUkSKxdcwo7KS60N9SNkNFdYK2UlSa8w",
-  authDomain: "mainidea-1cee4.firebaseapp.com",
-  projectId: "mainidea-1cee4",
-  storageBucket: "mainidea-1cee4.appspot.com",
-  messagingSenderId: "1013242341572",
-  appId: "1:1013242341572:web:1df53e489422099bd08191",
-  measurementId: "G-FVC4EV408S"
+  apiKey: "AIzaSyAGfgcVL4xgHzPY7qAWVdtkZiOFJ0irB40",
+  authDomain: "mainidea-482b3.firebaseapp.com",
+  projectId: "mainidea-482b3",
+  storageBucket: "mainidea-482b3.appspot.com",
+  messagingSenderId: "138744001762",
+  appId: "1:138744001762:web:b786ade7ae85e5ebda1abb",
+  measurementId: "G-4XMG81L29D"
 };
 
 export default firebase.initializeApp(firebaseConfig);

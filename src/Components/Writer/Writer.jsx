@@ -1,31 +1,22 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Writer.css'
-import { FirebaseContext, AuthContext } from '../../store/FirebaseContext';
+import { FirebaseContext } from '../../store/FirebaseContext';
 
 function Writer() {
-  const { user } = useContext(AuthContext);
   const { firebase } = useContext(FirebaseContext);
   const [datas, Setdatas] = useState('');
-  const [image, Setimage] = useState('');
   const navigate = useNavigate();
   const date = new Date()
 
   const handleSubmit = () => {
-    firebase.storage().ref(`/image/${image.name}`).put(image).then(({ ref }) => {
-      ref.getDownloadURL().then((url) => {
-        firebase.firestore().collection("Datas").add({
-          Username: user.displayName,
-          Datas: datas,
-          userId: user.uid,
-          currectDate: date.toDateString(),
-          url: url
-        }).then(()=>{
-          navigate('/');
-        }).catch((error)=>{
-          alert(error)
-        });
-      });
+    firebase.firestore().collection("Datas").add({
+      Datas: datas,
+      currectDate: date.toDateString(),
+    }).then(() => {
+      navigate('/');
+    }).catch((error) => {
+      alert(error)
     });
   }
   return (
@@ -34,11 +25,6 @@ function Writer() {
         <h1>Write Your Thouts And ideas</h1>
         <form>
           <textarea name="Enter Details" id="" cols="40" rows="3" placeholder='Write your ideas' onChange={((e) => Setdatas(e.target.value))}></textarea>
-        </form>
-        <form className='second-form'>
-        <img src={image ? URL.createObjectURL(image) : 'ggg'} alt="" className='writer-image' />
-          <input type="file" onChange={(e) => Setimage(e.target.files[0])} className='file-insert' />
-
         </form>
         <button onClick={handleSubmit} className='submit-button'>Submit</button>
       </div>

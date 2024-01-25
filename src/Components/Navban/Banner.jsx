@@ -5,12 +5,12 @@ import Logo from '../../assets/IMG_20231104_010107_045.jpg';
 import { Link } from 'react-router-dom';
 import { AuthContext, FirebaseContext } from '../../store/FirebaseContext';
 function Banner() {
-    const { user, Setuser } = useContext(AuthContext);
+    const { Setuser } = useContext(AuthContext);
     const { firebase } = useContext(FirebaseContext);
     const [Details, SetDetails] = useState([]);
 
     useEffect(() => {
-        console.log(user)
+        console.log(Details)
         firebase.firestore().collection('Datas').get().then((snapshot) => {
             const Allpost = snapshot.docs.map((UserDetails) => {
                 return {
@@ -23,7 +23,7 @@ function Banner() {
         firebase.auth().onAuthStateChanged((Realuser) => {
             Setuser(Realuser)
         })
-    },);
+    },)
     return (
         <div>
             <div className="container">
@@ -51,21 +51,17 @@ function Banner() {
                         </button>
                     </div>
                     {
-                        Details.map((data) => (
+                        Details.map((data)=>(
                             <>
                                 <div className="post-body">
-                                    <div className="user-logo">
-                                        <img src={data.url} alt="Images" />
-                                    </div>
                                     <div className="user-data">
-                                        {user ? user.displayName : 'login'}
                                         <p>{data.Datas}</p>
                                         <div className="date-time">{data.currectDate}</div>
                                     </div>
                                 </div>
                             </>
                         ))
-                    }
+                    }          
                 </div>
                 <div className="more-deatils">
 
@@ -120,5 +116,4 @@ function Banner() {
         </div>
     )
 }
-
-export default Banner
+export default Banner;

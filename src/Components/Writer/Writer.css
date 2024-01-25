@@ -17,15 +17,14 @@ form textarea{
     border: 1px solid;
     outline: none;
     padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 70px;
 }
 form textarea::placeholder{
     font-family: sans-serif;
 }
-.second-form{
-    width: 40%;
-    margin: 10px auto;
-    border-radius: 10px;
-}
+
 .writer-wrapper .submit-button{
     padding: 10px;
     width:60%;
@@ -36,11 +35,7 @@ form textarea::placeholder{
     color: whitesmoke;
     border-radius: 10px;
 }
-form img{
-    height: 80px;
-    width: 80px;
-    border-radius: 10px;
-}
+
 @media only screen and (max-width:800px) {
     .writer-wrapper h1{
         font-family: 'Poppins',sans-serif;
@@ -94,5 +89,6 @@ form img{
         background-color: orange;
         color: whitesmoke;
         width: 50%;
+        margin-top: 40px;
     }
 }

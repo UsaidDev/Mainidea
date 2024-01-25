@@ -17,13 +17,15 @@
 .Posts {
     flex: 30% 1;
     height: 100vh;
-    
+
 }
-.more-deatils{
+
+.more-deatils {
     flex: 1%;
     background-color: whitesmoke;
     border: 10px;
 }
+
 .sidebar {
     height: 100vh;
     background-color: gainsboro;
@@ -31,10 +33,10 @@
     position: fixed;
     width: 200px;
 }
+
 .profile {
     margin: 20px;
     margin-top: 40px;
-
 }
 
 .profile img {
@@ -102,88 +104,65 @@
 .icon-logo {
     display: none;
 }
-.explore{
+
+.explore {
     display: none;
 }
-.post-body{
-    margin:auto;
-    background-color: whitesmoke;
+
+.post-body {
+    height: fit-content;
+    width: 60vh;
     border: 1px solid #1E83A4;
-    width: 80vh;
-    margin-top: 50px;
+    margin: 50px auto;
+    margin-top: 40px;
     border-radius: 10px;
-    display: flex;
-}
-.user-logo img {
-    width: auto;
-    padding: 5px;
-    flex: 40%;
-    border-radius: 10px;
-    flex: 84% 1;
-    height: 30vh;
-}
-.user-data{
-    flex: 20%;
-    height: 30vh;
-    overflow:scroll;
+    background-color: whitesmoke;
     padding: 10px;
-    font-family: 'Poppins',sans-serif;
-    font-size: 16px;
 }
-.date-time{
-    margin-top: 20%;
+
+.user-data p {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.date-time {
     text-align: end;
-    font-weight: 500;
-    font-family: sans-serif;
 }
+
 @media only screen and (max-width:800px) {
-    .more-deatils{
+    .more-deatils {
         display: none;
     }
+
     .date-time {
         text-align: end;
         justify-content: end;
         position: relative;
         margin-top: 5px;
     }
-    .user-logo img {
-        border-radius: 10px;
-        margin:0 auto;
-        text-align: center;
-        justify-content: center;
-        display:flex;
-        width: 39vh;
-        height: 40vh;
-    }
     .user-data{
-        height: 20vh;
-        overflow:scroll;
-        padding: 10px;
-        display: block;
-        flex: 30%;
-        font-family:'Poppins',sans-serif;
+        width: 100%;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
     }
-    .user-data p{
-        font-family: 'Poppins',sans-serif;
-        font-size: 0.9rem;
-        font-weight: 500;
-        padding: 4px;
+
+    .post-body {
+        height: fit-content;
+        width: 40vh;
+        border: 1px solid #1E83A4;
+        margin: auto;
+        margin-top: 40px;
+        border-radius: 10px;
+        background-color: whitesmoke;
+        padding: 10px;
+        display: flex;
     }
     .date-time{
-        top: 30px;
+        font-size: 12px;
         font-family: sans-serif;
-        font-size: 0.9rem;
     }
-    .post-body {
-        display: block;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #1E83A4;
-        border-radius: 10px;
-        margin-top: 20px;
-        width: 40vh;
-        height: fit-content;
-    }
+
     .explore {
         display: flex;
         margin: 10px auto;
@@ -191,6 +170,7 @@
         align-items: center;
         margin-top: 30px;
     }
+
     .foryou-btn {
         padding: 5px;
         border-radius: 20px;
@@ -200,6 +180,7 @@
         background-color: hsl(195, 83%, 16%);
         color: whitesmoke;
     }
+
     .explore-btn {
         padding: 5px;
         width: 150px;
@@ -209,6 +190,7 @@
         background-color: #1E83A4;
         color: whitesmoke;
     }
+
     .sm-navbar {
         display: flex;
         justify-content: center;
@@ -223,19 +205,23 @@
         right: 0;
         margin: 0;
     }
+
     .logo {
         text-align: center;
         margin: auto;
         font-family: sans-serif;
         display: flex;
     }
+
     .navbar h3 {
         color: #073B4C;
     }
+
     .navbar-desctop {
         display: none;
         background-color: #fff;
     }
+
     .mobile-list {
         display: flex;
         bottom: 0;
@@ -251,6 +237,7 @@
         right: 0;
         margin: 0;
     }
+
     .mobile-list li i {
         font-size: 30px;
         background: none;
