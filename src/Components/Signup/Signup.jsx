@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { FirebaseContext } from '../../store/FirebaseContext'
 import { useNavigate } from 'react-router-dom'
+
 function Signup() {
     const [username, Setusername] = useState('');
     const [email, Setemail] = useState('');
@@ -19,7 +20,7 @@ function Signup() {
                     email: email
                 }).then(() => {
                     navigate('/login');
-                }).catch((error)=>{
+                }).catch((error) => {
                     alert(error)
                 })
             });

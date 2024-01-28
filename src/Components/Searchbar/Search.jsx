@@ -6,7 +6,7 @@ function Search() {
     <div>
         <div className="Search-bar">
           <p>Search</p>
-          <input type="text" placeholder='Seach Your Frindes' />
+          <input type="text" placeholder='Seach Your Teams' />
         </div>
     </div>
   )

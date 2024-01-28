@@ -10,7 +10,6 @@ function Banner() {
     const [Details, SetDetails] = useState([]);
 
     useEffect(() => {
-        console.log(Details)
         firebase.firestore().collection('Datas').get().then((snapshot) => {
             const Allpost = snapshot.docs.map((UserDetails) => {
                 return {
@@ -35,7 +34,7 @@ function Banner() {
                                 <Link to={'/'}><li><i class="fa fa-home" aria-hidden="true"></i>Home</li></Link>
                                 <Link to={'/search'}><li><i class="fas fa-search"></i>Search</li></Link>
                                 <Link to={'/writer'}><li><i class="fa-solid fa-pen"></i>Write</li></Link>
-                                <li><i class="fa-regular fa-heart"></i>Like</li>
+                                <Link to={'/like'}><li><i class="fa-regular fa-heart"></i>Like</li></Link>
                             </ul>
                             <div class="profile">
                                 <img src={Profile} alt="Image2" />
@@ -51,7 +50,7 @@ function Banner() {
                         </button>
                     </div>
                     {
-                        Details.map((data)=>(
+                        Details.map((data) => (
                             <>
                                 <div className="post-body">
                                     <div className="user-data">
@@ -61,7 +60,7 @@ function Banner() {
                                 </div>
                             </>
                         ))
-                    }          
+                    }
                 </div>
                 <div className="more-deatils">
 
@@ -106,11 +105,13 @@ function Banner() {
                         </svg></li>
                     </Link>
 
-                    <li><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
-                        <path
-                            d="M22.9374 7.10078C19.9105 4.65978 16.8154 7.10077 15.7023 8.22281C14.5892 7.10077 11.4941 4.65978 8.46724 7.10078C5.44036 9.54177 4.78252 14.6068 9.02379 18.8822C13.2651 23.1576 15.7023 23.9314 15.7023 23.9314C15.7023 23.9314 18.1396 23.1576 22.3809 18.8822C26.6222 14.6068 25.9643 9.54177 22.9374 7.10078Z"
-                            stroke="#073B4C" stroke-width="1.74809" />
-                    </svg></li>
+                    <Link to={'/like'}>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                            <path
+                                d="M22.9374 7.10078C19.9105 4.65978 16.8154 7.10077 15.7023 8.22281C14.5892 7.10077 11.4941 4.65978 8.46724 7.10078C5.44036 9.54177 4.78252 14.6068 9.02379 18.8822C13.2651 23.1576 15.7023 23.9314 15.7023 23.9314C15.7023 23.9314 18.1396 23.1576 22.3809 18.8822C26.6222 14.6068 25.9643 9.54177 22.9374 7.10078Z"
+                                stroke="#073B4C" stroke-width="1.74809" />
+                        </svg></li>
+                    </Link>
                 </ul>
             </nav>
         </div>

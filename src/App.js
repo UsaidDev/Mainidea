@@ -7,6 +7,7 @@ import Login from './Page/Login'
 import Signup from './Page/Signup';
 import NotPage from './Page/NotPage';
 import Profile from './Page/Profile';
+import Like from './Page/Like';
 import { AuthContext, FirebaseContext } from './store/FirebaseContext';
 
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/writer' element={<Writer />} />
         <Route path='/search' element={<Search />} />
         <Route path='/profile' element={<Profile/>} />
+        <Route path='/like' element={<Like />} />
         <Route path='*' element={<NotPage />} />
       </Routes>
     </div>

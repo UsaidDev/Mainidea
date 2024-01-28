@@ -1,0 +1,9 @@
+.top-like{
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+}
+.top-like h1{
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+}

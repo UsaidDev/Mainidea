@@ -4,7 +4,7 @@ import './Profile.css'
 function Profile() {
   return (
     <div>
-        This is Profile Page
+        <p>This is Profile Page</p>
     </div>
   )
 }
